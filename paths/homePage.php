@@ -23,19 +23,19 @@
     <span class="navbar-brand" href="#"><i class='fas fa-gamepad'></i> Game Management</span>
     <div class="d-flex justify-content-center gap-10 w-100">
         <div class="navbar-nav d-flex vw-75 justify-content-between">
-          <a class="nav-link " href="#">Home</a>
-          <a class="nav-link" href="#">Categories</a>
+          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link" href="categories.php">Categories</a>
           <a class="nav-link" href="#">Products</a>
         </div>
     </div>
     <div class="btn-group">
-      <a  class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a  class=" dropdown-toggle dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <?php echo $_SESSION['name'] ?>
       </a>
       <div class="dropdown-menu dropdown-menu-right">
-        <a class="dropdown-item" >Profile</a>
-        <a class="dropdown-item" >Another action</a>
-        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Profile</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider" href="#"></div>
           <a class="dropdown-item" href="login.php">Log out</a>
         
       </div>

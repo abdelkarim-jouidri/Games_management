@@ -1,7 +1,3 @@
-<?php
-  session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,52 +15,36 @@
     <title>Document</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand  navbar-light bg-light shadow mb-5">
-    <span class="navbar-brand" href="#"><i class='fas fa-gamepad'></i> Game Management</span>
-    <div class="d-flex justify-content-center gap-10 w-100">
-        <div class="navbar-nav d-flex vw-75 justify-content-between">
-          <a class="nav-link " href="homePage.php">Home</a>
-          <a class="nav-link active" href="#">Categories</a>
-          <a class="nav-link" href="#">Products</a>
-        </div>
-    </div>
-    <div class="btn-group">
-      <a  class=" dropdown-toggle dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <?php echo $_SESSION['name'] ?>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right">
-        <a class="dropdown-item" href="#">Profile</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <div class="dropdown-divider" href="#"></div>
-          <a class="dropdown-item" href="login.php">Log out</a>
-        
-      </div>
-    </div>
+    <?php 
+      include('header.php') ;
+      include('../scripts.php');
+      $data = getProducts();
+      // print_r($data)
 
-
-  </nav>
+    ?>
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+          <?php foreach($data as $row) :
+            // print_r($row)
+            echo 
+            "<div class='col-sm-6'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>".$row['category_name']."</h5>
+                        <p class='card-text'>".$row['category_name']."</p>
+                        <a href='#' class='btn btn-primary'>Go somewhere</a>
+                    </div>
                 </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
+            </div>";
+                  
+            ?>
+            
+            
+
+            <?php endforeach  ?>
+            
         </div>
-        </div>
+      </div>
 </body>
 </html>

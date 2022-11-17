@@ -1,6 +1,4 @@
-<?php
-  session_start();
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,62 +17,14 @@
     <title>Document</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand  navbar-light bg-light shadow mb-5">
-    <span class="navbar-brand" href="#"><i class='fas fa-gamepad'></i> Game Management</span>
-    <div class="d-flex justify-content-center gap-10 w-100">
-        <div class="navbar-nav d-flex vw-75 justify-content-between">
-          <a class="nav-link active" href="#">Home</a>
-          <a class="nav-link" href="categories.php">Categories</a>
-          <a class="nav-link" href="#">Products</a>
-        </div>
-    </div>
-    <div class="btn-group">
-      <a  class=" dropdown-toggle dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <?php echo $_SESSION['name'] ?>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right">
-        <a class="dropdown-item" href="#">Profile</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <div class="dropdown-divider" href="#"></div>
-          <a class="dropdown-item" href="login.php">Log out</a>
-        
-      </div>
-    </div>
-
-
-  </nav>
+  <?php include('header.php') ?>
 
   <div class="container ">
-    <table class="table table-striped border">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ducimus sequi! Perspiciatis qui non et dolores quia veniam eius id repellat! Quis, vel possimus. Accusantium ducimus labore in fugit illo.
+    Rem quibusdam cumque facere impedit voluptatibus veritatis deleniti aperiam quod quo mollitia dolorem, eveniet consequatur molestias omnis blanditiis quisquam doloremque, adipisci unde libero autem tenetur alias optio! Odio, atque quia.
+    Aliquid dolorem aperiam placeat, consectetur expedita sequi! Minus quaerat harum suscipit cupiditate, distinctio ut in quod quisquam unde sequi amet nam delectus expedita sit labore, quo nobis, incidunt id voluptate!
+    At impedit obcaecati commodi laboriosam explicabo animi veritatis quas itaque, velit perferendis in dolorum sapiente odio ut aliquid officiis sequi dicta rerum quibusdam! Est ratione excepturi architecto maiores placeat deserunt.
+    Reprehenderit iste ut dolorum mollitia aperiam, soluta illum non quod veniam aut minima dicta enim dignissimos facilis consequuntur molestias aliquid dolorem! Modi, voluptate sint ut totam deserunt quae debitis fugit.</h1>
   </div>
 </body>
 </html>

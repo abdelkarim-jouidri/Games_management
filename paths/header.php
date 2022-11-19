@@ -2,21 +2,22 @@
   session_start();
 ?>
 
-
-  <nav class="navbar navbar-expand  navbar-light bg-light shadow mb-5 px-2">
-    <span class="navbar-brand" href="#"><i class='fas fa-gamepad'></i> Game Management</span>
-    <div class="d-flex justify-content-center gap-10 w-100">
+<header class="d-flex flex-column align-items-between ">
+<h1 class="text-center  mb-2" href="#"><i class='fas fa-gamepad'></i> Game Management</h1>
+  <nav class="navbar navbar-expand  navbar-light bg-light shadow mb-5 px-2 border-top d-flex flex-sm-nowrap flex-wrap justify-content-between">
+    <!-- <span class="navbar-brand" href="#"><i class='fas fa-gamepad'></i> Game Management</span> -->
+    <div class="d-flex justify-content-sm-start justify-content-center gap-10 w-100">
         <div class="navbar-nav d-flex vw-75 justify-content-between">
           <a class="nav-link " href="homePage.php">Home</a>
           <a class="nav-link" href="categories.php">Categories</a>
           <a class="nav-link" href="products.php">Products</a>
         </div>
     </div>
-    <div class="btn-group">
-      <a  class=" dropdown-toggle dropdown-item" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="btn-group d-flex justify-content-center w-100">
+      <a  class=" dropdown-toggle dropdown-item text-center text-sm-right" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <?php echo $_SESSION['name'] ?>
       </a>
-      <div class="dropdown-menu dropdown-menu-right">
+      <div class="dropdown-menu dropdown-menu-right w-75">
         <a class="dropdown-item" href="#">Profile</a>
         <a class="dropdown-item" href="#">Another action</a>
         <div class="dropdown-divider" href="#"></div>
@@ -25,4 +26,5 @@
       </div>
     </div>
   </nav>
+</header>
 

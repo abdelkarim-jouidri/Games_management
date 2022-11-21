@@ -1,6 +1,5 @@
 <?php
-   
-   include('../scripts.php');
+    include('../scripts.php');
 
 
 ?>
@@ -17,13 +16,14 @@
    <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <title>Log in</title>
+    <link href="assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="assets/css/default/app.min.css" rel="stylesheet" />
+    <title>Sign up</title>
 </head>
-<body class="d-flex align-items-center  justify-content-center  bg-light  flex-column vh-100">
+<body class="d-flex align-items-center  justify-content-center  bg-light bg-gradient flex-column vh-100">
 <?php if (isset($_SESSION['message'])): ?>
-				<div class="alert alert-green bg-danger alert-dismissible fade show w-50 text-center">
-				<strong>Error!</strong>
+				<div class="alert alert-green bg-success alert-dismissible fade show w-75 text-center">
+				<strong>Success!</strong>
 					<?php 
 						echo $_SESSION['message']; 
 						unset($_SESSION['message']);
@@ -31,24 +31,27 @@
 					<button type="button" class="btn-close" data-bs-dismiss="alert"></span>
 				</div>
 			<?php endif ?>
-    <h3 class="text-secondary ">Log in to start your session !</h3>
+    <h3 class="text-secondary ">Register into the database !!</h3>
 
-    <div class=" bg-light  border shadow-lg p-5 rounded vw-25 ">
-        <form action="login.php" method="POST" id="login" onsubmit="return true">
-            <div class="form-group " id="email-group">
+    <div class=" bg-light  border shadow-lg p-4 rounded vw-25 ">
+        <form action="signup.php" method="POST" id="login" onsubmit="return validateInput()">
+        <div class="form-group">
+                <label for="username">username</label>
+                <input type="text" id="username" placeholder="Please enter a username " name="username" class="w-100 rounded border " >
+            </div>
+            <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Please enter an Email Adress" name="email" class="w-100 rounded border " >
             </div>
-            <div class="form-group w-100" id="password-group">
+            <div class="form-group">
                 <label for="password">Password </label>
                 <input type="password" placeholder="Please enter a password" name="password" id="password" class="w-100 rounded border ">
             </div>
-            <div class="d-flex justify-content-center mt-2 flex-wrap ">
-            <input type="submit" name="login"  value="Log In" class="btn btn-primary px-3 py-1 font-weight-bold w-100 mb-2 ">
-            <p class="">create account at : <a href="signup.php">REGISTER</a></p>
+            <div class="d-flex justify-content-center flex-wrap">
+            <input type="submit" name="register" value="REGISTER" class="btn btn-primary px-3 py-1 font-weight-bold w-100 my-2">
+            <p class="">Are you already registered ? login at : <a href="login.php" class="href">Login</a></p>
             </div>
         </form>
    </div>
-   <!-- <script src="../assets/js/script.js"></script> -->
 </body>
 </html>

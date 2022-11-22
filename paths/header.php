@@ -1,5 +1,5 @@
 <?php
-  session_start();
+
 ?>
 
 <header class="d-flex flex-column align-items-between ">
@@ -15,17 +15,20 @@
 
         </div>
     </div>
-    <div class="btn-group d-flex justify-content-center w-100">
-      <a  class=" dropdown-toggle dropdown-item text-center text-sm-end" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="btn-group d-flex justify-content-sm-end justify-content-center w-100">
+
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <?php echo $_SESSION['name'] ?>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right w-75">
-        <a class="dropdown-item" href="#">Profile</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <div class="dropdown-divider" href="#"></div>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <!-- <li><a class="dropdown-item" href="#"></a></li> -->
+            <div class="dropdown-divider" href="#"></div>
           <a class="dropdown-item" href="login.php">Log out</a>
-        
       </div>
+        </ul>
+        </div>
     </div>
   </nav>
 </header>

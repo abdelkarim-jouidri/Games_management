@@ -2,7 +2,6 @@
    
    include('../scripts.php');
 
-
 ?>
 
 
@@ -22,7 +21,7 @@
 </head>
 <body class="d-flex align-items-center  justify-content-center  bg-light  flex-column vh-100">
 <?php if (isset($_SESSION['message'])): ?>
-				<div class="alert alert-green bg-danger alert-dismissible fade show w-50 text-center">
+				<div class="alert alert-green bg-danger alert-dismissible fade show w-50 text-center ">
 				<strong>Error!</strong>
 					<?php 
 						echo $_SESSION['message']; 

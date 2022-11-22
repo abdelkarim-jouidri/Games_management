@@ -12,6 +12,14 @@ session_start();
 
     if(isset($_POST['save_category'])) addCategory();
 
+    if(isset($_POST['delete_product'])) deleteProduct();
+
+    if(isset($_POST['update_category'])) editCategory();
+
+    if(isset($_POST['update_product'])) editproduct();
+
+
+
     function addProduct(){
         include('DB/connection.php');
         $name = $_POST['product_name'];
@@ -121,15 +129,18 @@ session_start();
         $name = $_POST['category_name'];
         $description = $_POST['category_description'];
         $image = $_POST['category_photo'];
-        $query = "UPDATE `category` SET `category_name` = 'warA' WHERE `category`.`cat_ID` = '$id';";
-        // echo "entered the function";
+        // if the image input is not filled with a new image 
         if(empty($_POST['category_photo'])){
             $query = "UPDATE `category` SET `category_name`='$name' ,`category_description`='$description' WHERE `category`.`cat_ID` = '$id'";
             if(mysqli_query($connexion,$query)) {
                 $_SESSION['message'] = "the item has been successfully updated";
                 header('location:paths/categories.php');
             }
-        }else {
+        }
+
+        // otherwise get the new submitted path have it override the old path 
+
+        else {
             $query = "UPDATE `category` SET `category_name`='$name' ,`category_description`='$description' , `image`='$image' WHERE `category`.`cat_ID` = '$id'";
             if(mysqli_query($connexion,$query)) {
                 $_SESSION['message'] = "the item has been successfully updated";
@@ -137,22 +148,50 @@ session_start();
             }
         }
     }
-    function deleteCategory(){
+    
+    function deleteProduct(){
         include('DB/connection.php');
-        $id = $_POST['category_id'];
+        $id = $_POST['product_id'];
 
-        $query_product = "DELETE FROM products WHERE `category_id` = '$id'";
-        $query_category = "DELETE FROM category WHERE `cat_ID` = '$id'";
-       if( mysqli_query($connexion,$query_product)){
-            if(mysqli_query($connexion,$query_category)) {
+        $query = "DELETE FROM products WHERE `product_id` = '$id'";
+       if(mysqli_query($connexion,$query)){
                 $_SESSION['message'] = "the item has been successfully deleted";
                 header('location:paths/categories.php');
-            }
-        }
+       }
         
     }
+    function editproduct(){
+        include('DB/connection.php');
+        $id = $_POST['product_id'];
+        $name = $_POST['product_name'];
+        $description = $_POST['product_description'];
+        $image = $_POST['product_photo'];
+        $quantity = $_POST['product_quantity'];
+        $category = $_POST['product_category'];
 
-    if(isset($_POST['update_category'])) editCategory();
+        // if the image input is not filled with a new image 
+        if(empty($_POST['product_photo'])){
+            $query = "UPDATE `products` SET `product_name`='$name' ,`product_description`='$description', `quantity`='$quantity', `category_id`='$category'
+                      WHERE `products`.`product_ID` = '$id'";
+            if(mysqli_query($connexion,$query)) {
+                $_SESSION['message'] = "the item has been successfully updated";
+                header('location:paths/products.php');
+            }
+        }
+
+        // otherwise get the new submitted path have it override the old path 
+
+        else {
+            $query = "UPDATE `products` SET `product_name`='$name' ,`product_description`='$description', 
+                                            `quantity`='$quantity', `category_id`='$category' , `product_image`='$image' 
+                      WHERE `products`.`product_ID` = '$id'";
+            if(mysqli_query($connexion,$query)) {
+                $_SESSION['message'] = "the item has been successfully updated";
+                header('location:paths/products.php');
+            }
+        }
+    }
+
 
 
 ?>

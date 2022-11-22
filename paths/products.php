@@ -94,7 +94,7 @@
 
                     <form action="../scripts.php" method="POST" id="productsModalForm">
                         <!-- This Input Allows Storing Task Index  -->
-							<input type="hidden" id="product-id" name="task_id">
+							<input type="hidden" id="product-id" name="product_id">
 							<div class="mb-3">
 								<label class="name-label ">Product's Name</label>
 								<input type="text" class="form-control "  id="product-name" name="product_name" value="" />

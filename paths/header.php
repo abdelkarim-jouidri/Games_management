@@ -8,10 +8,10 @@
     <!-- <span class="navbar-brand" href="#"><i class='fas fa-gamepad'></i> Game Management</span> -->
     <div class="d-flex justify-content-sm-start justify-content-center w-100">
         <div class="navbar-nav d-flex vw-75 justify-content-between">
-          <a class="nav-link " href="homePage.php">Home</a>
-          <a class="nav-link" href="categories.php">Categories</a>
-          <a class="nav-link" href="products.php">Products</a>
-          <a class="nav-link" href="products.php">Dashboard</a>
+          <a class="nav-link fw-bold" href="homePage.php">Home</a>
+          <a class="nav-link fw-bold" href="categories.php">Categories</a>
+          <a class="nav-link fw-bold" href="products.php">Products</a>
+          <a class="nav-link fw-bold" href="products.php">Dashboard</a>
 
         </div>
     </div>

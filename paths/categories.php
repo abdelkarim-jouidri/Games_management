@@ -64,7 +64,7 @@
             $description = $row['category_description'];
             // var_dump($data);
            echo "<tr data-bs-toggle='modal' data-bs-target='#categoryModal' onclick='fillCategoryModal($id)'>
-              <th scope='row' ><img src='../resources/$image' height='40' width='40' ></th>
+              <th scope='row' ><img src='../resources/$image' height='60' width='60' class='rounded-circle'></th>
               <td id='category-name-$id'>$name</td>
               <td id='category-description-$id'>$description</td>
             </tr>";

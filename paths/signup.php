@@ -35,6 +35,11 @@
 
     <div class=" bg-light  border shadow-lg p-4 rounded vw-25 ">
         <form action="signup.php" method="POST" id="login" onsubmit="return validateInput(this)">
+        <div class="mb-3 ">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
         <div class="form-group">
                 <label for="username">username</label>
                 <input type="text" id="username" placeholder="Please enter a username " name="username" class="w-100 rounded border " >

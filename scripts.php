@@ -192,6 +192,26 @@ session_start();
         }
     }
 
+    function getStatistics(){
+        include('DB/connection.php');
+        $query_products = "SELECT count(*) as products_count FROM products";
+        $query_categories = "SELECT count(*) as category_count FROM category";
+        $query_sum = "SELECT SUM(quantity) as sum_of_quantity FROM products";
+        $res_products = mysqli_query($connexion,$query_products);
+        $res_categories = mysqli_query($connexion,$query_categories);
+        $res_sum_of_quantity = mysqli_query($connexion,$query_sum);
+        $data = [];
+        // $data  mysqli_fetch_assoc($res_products)['products_count'];
+        array_push($data,mysqli_fetch_assoc($res_products)['products_count']);
+        array_push($data,mysqli_fetch_assoc($res_categories)['category_count']);
+        array_push($data,mysqli_fetch_assoc($res_sum_of_quantity)['sum_of_quantity']);
+
+
+        return $data;
+
+
+    }
+    
 
 
 ?>

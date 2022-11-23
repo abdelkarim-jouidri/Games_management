@@ -30,8 +30,8 @@
   ?>
 
   <div class="container">
-
-  <table class="table table-striped border shadow">
+  <div class="table-responsive">
+  <table class="table  border shadow table-hover">
     <div class="d-flex justify-content-between align-items-center mb-1 h-25">
     <h6>ALL PRODUCTS</h6>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productsModal" onclick="handleProductModal()">
@@ -68,8 +68,8 @@
             $cat_ID = $row['cat_ID'];
             
             $id = $row['product_ID'];
-           echo "<tr data-bs-toggle='modal' data-bs-target='#productsModal' onclick='fillProductModal($id)'>
-              <th scope='row'><img src='../resources/$image' height='40' width='40'></th>
+           echo "<tr data-bs-toggle='modal' data-bs-target='#productsModal' onclick='fillProductModal($id)' >
+              <th scope='row'><img src='../resources/$image' height='60' width='60' class='rounded-circle'></th>
               <td id='product-name-$id'>$name</td>
               <td id='product-description-$id'>$description</td>
               <td id='product-quantity-$id'>$quantity</td>
@@ -81,6 +81,8 @@
       <?php endforeach ?>
     </tbody>
   </table>
+  </div>
+  
   </div>
     <!-- MODAL -->
     <div class="modal fade" id="productsModal" tabindex="-1" aria-labelledby="productsModalLabel" aria-hidden="true">

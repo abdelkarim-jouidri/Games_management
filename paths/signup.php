@@ -34,18 +34,24 @@
     <h3 class="text-secondary ">Register into the database !!</h3>
 
     <div class=" bg-light  border shadow-lg p-4 rounded vw-25 ">
-        <form action="signup.php" method="POST" id="login" onsubmit="return validateInput()">
+        <form action="signup.php" method="POST" id="login" onsubmit="return validateInput(this)">
         <div class="form-group">
                 <label for="username">username</label>
                 <input type="text" id="username" placeholder="Please enter a username " name="username" class="w-100 rounded border " >
+                <ul class="list-unstyled" id="username-error">
+                </ul>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Please enter an Email Adress" name="email" class="w-100 rounded border " >
+                <ul class="list-unstyled" id="email-error">
+                </ul>
             </div>
             <div class="form-group">
                 <label for="password">Password </label>
-                <input type="password" placeholder="Please enter a password" name="password" id="password" class="w-100 rounded border ">
+                <input type="text" placeholder="Please enter a password" name="password" id="password" class="w-100 rounded border ">
+                <ul class="list-unstyled" id="password-error">
+                </ul>
             </div>
             <div class="d-flex justify-content-center flex-wrap">
             <input type="submit" name="register" value="REGISTER" class="btn btn-primary px-3 py-1 font-weight-bold w-100 my-2">
@@ -53,5 +59,6 @@
             </div>
         </form>
    </div>
+   <script src="assets/js/script.js"></script>
 </body>
 </html>

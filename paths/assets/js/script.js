@@ -1,44 +1,34 @@
-// const elementError = document.createElement('div')
-// // elementError.classList.add('border-danger')
-// document.querySelector('#password-group').insertAdjacentElement('beforeend',elementError);
 
-// function validateInput (){
-//     const formEmail = document.getElementById('email');
-//     const formPassword = document.getElementById('password');
-//     let valid = true;
-//     elementError.textContent = '';
+
+function validateInput(form){
+    document.getElementById('username-error').innerHTML=""
+    document.getElementById('email-error').innerHTML=""
+    document.getElementById('password-error').innerHTML=""
+
+
+    let usernameErrorMsg = emailErrorMsg = passwordErrorMsg =""
+    usernameErrorMsg += validateUsername(form.username.value)
+    emailErrorMsg += validateEmail(form.email.value)
+    passwordErrorMsg += validatePassword(form.password.value)
+
+    if(usernameErrorMsg!=""){
+        const liElement = `<li class="text-danger">${usernameErrorMsg}</li>`
+        console.log(liElement)
+        document.getElementById('username-error').insertAdjacentHTML('beforeend',liElement)
+    }
+    if(emailErrorMsg!=""){
+        const liElement = `<li class="text-danger">${emailErrorMsg}</li>`
+        console.log(liElement)
+        document.getElementById('email-error').insertAdjacentHTML('beforeend',liElement)
+    }
+    if(passwordErrorMsg!=""){
+        const liElement = `<li class="text-danger">${passwordErrorMsg}</li>`
+        console.log(liElement)
+        document.getElementById('password-error').insertAdjacentHTML('beforeend',liElement)
+    }
     
-//     if(formEmail.value=="") {
-//         document.querySelector('#email').classList.add('border-danger')
-//         // formEmail.value = "error";
-        
-//         document.querySelector('#email-group').insertAdjacentElement('beforeend',elementError);
-
-//         elementError.textContent = 'Field cannot be blank';
-
-//         valid = false;
-//     }
-//     if(formPassword.value=="") {
-//         formPassword.classList.add('border-danger')
-//         elementError.textContent = 'Field cannot be blank';
-
-//         valid = false;
-//     }
-
-//     return valid
-// }
-
-
-function fillModal(id){
-    // alert('dkhal')
-    // document.getElementById('category-btn').click();
-    // document.getElementById('category-name').value = document.getElementById(`category-title-${id}`)
-    console.log(document.getElementById(`category-description-${id}`).dataset.description)
-    document.getElementById('category-description').value = document.getElementById(`category-description-${id}`).dataset.description
-    // document.getElementById('category-photo').filename = 'ok'
-    console.log(document.getElementById('category-photo').files)
-
-    
+    if(usernameErrorMsg=="" && emailErrorMsg=="" && passwordErrorMsg=="") return true
+    else return false;
 }
 
 function fillCategoryModal(id){
@@ -81,6 +71,28 @@ function handleProductModal(){
     document.getElementById('product-save-btn').style.display = 'inline-block'
     document.getElementById('product-update-btn').style.display = 'none'
     document.getElementById('product-delete-btn').style.display = 'none'
+}
 
+function validateUsername(input){
+    if(input=="") return "username input cannot be left blank"
+    if(input.length<3) return "user name should be at least 3 characters long";
+    if(/[^a-zA-Z0-9_-]/.test(input)) return "only a-z , A-Z , 0-9 , - and _ are allowed"
+    else return "";
+}
 
+function validateEmail(input){
+    if(input=="") return "email input cannot be left blank"
+    if(!/[^@\s]+@[^@\s]+\.[^@\s]+/.test(input)) return "incorrect email format"
+    return "";
+}
+
+function validatePassword(input){
+    if(input=="") return "password input cannot be left blank";
+    if(input.length<8) return "password must be at least 8 characters long";
+   
+    else {
+        if(/^[^A-Z]+$/.test(input) || /^[^0-9]+$/.test(input)) 
+             return "password must contain at least an upper case letter and a numeric character";
+        }
+    return "";
 }

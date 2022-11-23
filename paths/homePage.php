@@ -32,11 +32,23 @@
   include('header.php') ?>
 
   <div class="container ">
-    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ducimus sequi! Perspiciatis qui non et dolores quia veniam eius id repellat! Quis, vel possimus. Accusantium ducimus labore in fugit illo.
-    Rem quibusdam cumque facere impedit voluptatibus veritatis deleniti aperiam quod quo mollitia dolorem, eveniet consequatur molestias omnis blanditiis quisquam doloremque, adipisci unde libero autem tenetur alias optio! Odio, atque quia.
-    Aliquid dolorem aperiam placeat, consectetur expedita sequi! Minus quaerat harum suscipit cupiditate, distinctio ut in quod quisquam unde sequi amet nam delectus expedita sit labore, quo nobis, incidunt id voluptate!
-    At impedit obcaecati commodi laboriosam explicabo animi veritatis quas itaque, velit perferendis in dolorum sapiente odio ut aliquid officiis sequi dicta rerum quibusdam! Est ratione excepturi architecto maiores placeat deserunt.
-    Reprehenderit iste ut dolorum mollitia aperiam, soluta illum non quod veniam aut minima dicta enim dignissimos facilis consequuntur molestias aliquid dolorem! Modi, voluptate sint ut totam deserunt quae debitis fugit.</h1>
+  <div class="row">
+  <div class="col-sm-4">
+    <div class="card shadow rounded-6">
+      <div class="card-body d-flex justify-content-center flex-wrap">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dicta iste nam magni sed adipisci dolores? </p>
+        <div class="w-75 border-bottom"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 </body>
 </html>

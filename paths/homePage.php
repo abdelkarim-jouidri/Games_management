@@ -30,7 +30,8 @@
   <?php 
   include('../scripts.php');
   include('header.php') ;
-  $data = getStatistics()
+  $data = getStatistics();
+  if(!isset($_SESSION['name'])) header('Location:login.php')
   ?>
 
 <div class="container mt-5 ">

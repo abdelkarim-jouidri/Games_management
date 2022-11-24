@@ -24,6 +24,8 @@
   <?php 
   include('../scripts.php');
   include('header.php');
+  if(!isset($_SESSION['name'])) header('Location:login.php');
+
   $product_data = getProducts();
   $category_data = getCategories();
 

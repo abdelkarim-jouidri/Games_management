@@ -34,34 +34,30 @@
     <h3 class="text-secondary ">Register into the database !!</h3>
 
     <div class=" bg-light  border shadow-lg p-4 rounded vw-25 ">
-        <form action="signup.php" method="POST" id="login" onsubmit="return validateInput(this)">
+        <form action="signup.php" method="POST" id="login" onsubmit="return validateSignupInput(this)">
+            <div class="mb-3 ">
+                <label for="username" class="form-label">username</label>
+                <input type="text" class="form-control " id="username" placeholder="Please enter a username " name="username" aria-describedby="emailHelp">
+                <ul class="list-unstyled" id="username-error">
+                    </ul>
+            </div>
         <div class="mb-3 ">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <input type="email" class="form-control " placeholder="Please enter an Email Adress" name="email"  aria-describedby="emailHelp">
+            <ul class="list-unstyled" id="email-error">
+                </ul>
         </div>
-        <div class="form-group">
-                <label for="username">username</label>
-                <input type="text" id="username" placeholder="Please enter a username " name="username" class="w-100 rounded border " >
-                <ul class="list-unstyled" id="username-error">
+        <div class="mb-3 ">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control " placeholder="Please enter a password" name="password" id="password"  aria-describedby="emailHelp">
+            <ul class="list-unstyled" id="password-error">
                 </ul>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Please enter an Email Adress" name="email" class="w-100 rounded border " >
-                <ul class="list-unstyled" id="email-error">
-                </ul>
-            </div>
-            <div class="form-group">
-                <label for="password">Password </label>
-                <input type="text" placeholder="Please enter a password" name="password" id="password" class="w-100 rounded border ">
-                <ul class="list-unstyled" id="password-error">
-                </ul>
-            </div>
+        </div>
+    
             <div class="d-flex justify-content-center flex-wrap">
             <input type="submit" name="register" value="REGISTER" class="btn btn-primary px-3 py-1 font-weight-bold w-100 my-2">
             <p class="">Are you already registered ? login at : <a href="login.php" class="href">Login</a></p>
-            </div>
+            </div> 
         </form>
    </div>
    <script src="assets/js/script.js"></script>

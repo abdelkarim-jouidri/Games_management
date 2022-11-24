@@ -33,14 +33,20 @@
     <h3 class="text-secondary ">Log in to start your session !</h3>
 
     <div class=" bg-light  border shadow-lg p-5 rounded vw-25 ">
-        <form action="login.php" method="POST" id="login" onsubmit="return true">
+        <form action="login.php" method="POST" id="login" onsubmit="return validateLoginInput(this)">
             <div class="form-group " id="email-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Please enter an Email Adress" name="email" class="w-100 rounded border " >
+                    <ul class="list-unstyled" id="email-login-error">
+
+                    </ul>
             </div>
             <div class="form-group w-100" id="password-group">
                 <label for="password">Password </label>
                 <input type="password" placeholder="Please enter a password" name="password" id="password" class="w-100 rounded border ">
+                        <ul class="list-unstyled" id="password-login-error">
+
+                         </ul>
             </div>
             <div class="d-flex justify-content-center mt-2 flex-wrap ">
             <input type="submit" name="login"  value="Log In" class="btn btn-primary px-3 py-1 font-weight-bold w-100 mb-2 ">
@@ -48,6 +54,6 @@
             </div>
         </form>
    </div>
-   <!-- <script src="../assets/js/script.js"></script> -->
+   <script src="assets/js/script.js"></script>
 </body>
 </html>

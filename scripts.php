@@ -88,9 +88,7 @@ session_start();
         
         if(count($data)>0){
             foreach($data as $row) {
-                    var_dump($data);
-                    echo "<br>";
-                    var_dump($row);
+                    
                     if(password_verify($_POST['password'],$row['admin_password'])) {
                         $_SESSION['name'] = $row['username'];
                         header('location:homepage.php');

@@ -97,7 +97,7 @@ function handleProductModal(){
 function validateSignupUsername(input){
     if(input=="") return "username input cannot be left blank"
     if(input.length<3) return "user name should be at least 3 characters long";
-    if(/[^a-zA-Z0-9_-]/.test(input)) return "only a-z , A-Z , 0-9 , - and _ are allowed"
+    if(/[^a-zA-Z0-9_-\s]/.test(input)) return "only a-z , A-Z , 0-9 , - and _ are allowed"
     else return "";
 }
 

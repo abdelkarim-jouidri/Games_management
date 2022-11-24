@@ -66,7 +66,7 @@
             $description = $row['category_description'];
             // var_dump($data);
            echo "<tr data-bs-toggle='modal' data-bs-target='#categoryModal' onclick='fillCategoryModal($id)'>
-              <th scope='row' ><img src='../resources/$image' height='60' width='60' class='rounded-circle'></th>
+              <th scope='row' ><img src='../resources/$image' height='60' width='60' class='border rounded-circle'></th>
               <td id='category-name-$id'>$name</td>
               <td id='category-description-$id'>$description</td>
             </tr>";
@@ -89,7 +89,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-            <form action="../scripts.php" method="POST" id="categoryModalForm" onclick="return myFunction(this)">
+            <form action="../scripts.php" method="POST" id="categoryModalForm" >
                         <!-- This Input Allows Storing Task Index  -->
 							<input type="hidden" id="category-id" name="category_id">
 							<div class="mb-3">
@@ -110,7 +110,7 @@
                                 <a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
                                 <button type="submit" name="delete_category" class="btn btn-danger task-action-btn " id="category-delete-btn" >Delete</a>
                                 <button type="submit" name="update_category" class="btn btn-warning task-action-btn " id="category-update-btn">Update</a>
-                                <button type="submit" name="save_category" class="btn btn-primary task-action-btn" id="category-save-btn" disabled>Save</button>
+                                <button type="submit" name="save_category" class="btn btn-primary task-action-btn" id="category-save-btn" >Save</button>
                             </div>
                     </form>
       </div>

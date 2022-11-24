@@ -24,13 +24,12 @@ session_start();
         include('DB/connection.php');
         $name = $_POST['product_name'];
         $description = $_POST['product_description'];
-        $date = $_POST['product_date'];
         $category = $_POST['product_category'];
         $photo = $_POST['product_photo'];
         $quantity = $_POST['product_quantity'];
 
-        $query = "INSERT INTO `products` (`product_ID`,`product_name`,`product_description`, `product_date`,`category_id`,`product_image`,`quantity`)
-                     VALUES (NULL, '$name' , '$description' , '$date' , '$category', '$photo' ,'$quantity') ";
+        $query = "INSERT INTO `products` (`product_ID`,`product_name`,`product_description`,`category_id`,`product_image`,`quantity`)
+                     VALUES (NULL, '$name' , '$description'  , '$category', '$photo' ,'$quantity') ";
         if(mysqli_query($connexion,$query)) {
             $_SESSION['message'] = "the item has been successfully added";
             header('location:paths/products.php');
@@ -73,10 +72,19 @@ session_start();
         $username = $_POST['username'];
         $password = $_POST['password'];
         $email =  $_POST['email'];
+
+        $query_check = "SELECT * FROM admins WHERE email = '$email'";
+        $res_check = mysqli_query($connexion,$query_check);
+        $data = mysqli_fetch_all($res_check, MYSQLI_ASSOC);
+        if(count($data)==0){
+            $hash = password_hash($password,PASSWORD_DEFAULT);
+            $query = "INSERT INTO admins (id,username,email,admin_password) VALUES (NULL , '$username','$email','$hash') ";
+            if(mysqli_query($connexion,$query)) $_SESSION['message'] = "you have been successfully added to the database";
+        }else {
+            $_SESSION['error'] = "Email already taken !";
+        }
         
-        $hash = password_hash($password,PASSWORD_DEFAULT);
-        $query = "INSERT INTO admins (id,username,email,admin_password) VALUES (NULL , '$username','$email','$hash') ";
-        if(mysqli_query($connexion,$query)) $_SESSION['message'] = "you have been successfully added to the database";
+        
     }
 
     function verifyLogIn(){

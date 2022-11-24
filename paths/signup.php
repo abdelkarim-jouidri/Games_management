@@ -31,6 +31,16 @@
 					<button type="button" class="btn-close" data-bs-dismiss="alert"></span>
 				</div>
 			<?php endif ?>
+<?php if (isset($_SESSION['error'])): ?>
+				<div class="alert alert-green bg-danger alert-dismissible fade show w-50 text-center ">
+				<strong>Error!</strong>
+					<?php 
+						echo $_SESSION['error']; 
+						unset($_SESSION['error']);
+					?>
+					<button type="button" class="btn-close" data-bs-dismiss="alert"></span>
+				</div>
+			<?php endif ?>
     <h3 class="text-secondary ">Register into the database !!</h3>
 
     <div class=" bg-light  border shadow-lg p-4 rounded vw-25 ">

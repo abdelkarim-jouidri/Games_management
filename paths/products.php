@@ -61,8 +61,12 @@
       </tr>
     </thead>
     <tbody>
-    <?php foreach($product_data as $row) :
-            $image=$row['product_image'];
+    <?php 
+    
+        if(count($product_data)>0){
+            foreach($product_data as $row) 
+            {
+                $image=$row['product_image'];
             $category = $row['category_name']; 
             $name = $row['product_name'];
             $description = $row['product_description'];
@@ -77,10 +81,10 @@
               <td id='product-quantity-$id'>$quantity</td>
               <td id='product-category-$id' data-category='$cat_ID'>$category</td>
             </tr>";
-           
+           }
+        }else echo " <p class='text-center'>No Available products at the moment</p>"
             ?>
             
-      <?php endforeach ?>
     </tbody>
   </table>
   </div>
